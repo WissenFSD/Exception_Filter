@@ -35,7 +35,15 @@ namespace Exception_Filter
             //email message hazır gönderelim
 
             client.Send(message);
+             // Exception Filter çalıştı, hata detayları email olarak gönderildi. 
+             // Exception filter sonunda, müşteri, hatalı sayfa görmemesi için farklı bir sayfaya yönlendirilmelidir.
 
+                 // farklı bir sayfaya yönlendiremeye çalışınız
+
+
+
+             // Exception filter iiçerisinde, bir sayfaya ymönlenmek ve o sayfaya bir değer göndermek 
+             context.Result = new RedirectToActionResult("Error", "Home", new { value = ex.Message });
 
         }
     }
